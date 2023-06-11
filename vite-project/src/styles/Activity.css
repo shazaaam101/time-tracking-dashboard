@@ -1,0 +1,84 @@
+.Activity {
+    background-color: var(--primary-work-clr);
+    border-radius: 1em;
+    background-image: url("../images/icon-work.svg");
+    background-repeat: no-repeat;
+    background-position: top right var(--padding);
+    display: grid;
+    padding-top: 3rem;
+}
+
+.Activity.play {
+    background-color: var(--primary-play-clr);
+    background-image: url("../images/icon-play.svg");
+}
+
+.Activity.study {
+    background-color: var(--primary-study-clr);
+    background-image: url("../images/icon-study.svg");
+}   
+
+.Activity.exercise {   
+    background-color: var(--primary-exercise-clr);
+    background-image: url("../images/icon-exercise.svg");
+}
+
+.Activity.social {
+    background-color: var(--primary-social-clr);
+    background-image: url("../images/icon-social.svg");
+}
+
+.Activity.self-care  {
+    background-color: var(--primary-self-care-clr);
+    background-image: url("../images/icon-self-care.svg");
+}
+
+.Activity .content {
+    cursor: pointer;
+    margin-top: auto;
+    background-color: var(--neutral-dark-blue);
+    padding: var(--padding);
+    border-radius: 1em;
+    color: var(--neutral-white);
+    transition: 0.3s ease;
+}
+
+.Activity .content:is(:hover, :focus-visible) {
+    background-color: var(--neutral-desaturated-blue);
+}
+
+.Activity .content > *:not(:first-child) {
+    margin-top: .5em;
+}
+
+.Activity .content .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Activity .content .top > .categorie {
+    font-weight: var(--secondary-fw);
+    font-size: var(--title-fs);
+}
+
+.Activity .content .top > .three-dot{
+    cursor: pointer;
+}
+
+.Activity .content .hrs {
+    font-size: 3em;
+}
+
+.Activity .content .last-week {
+    color: var(--neutral-pale-blue);
+}
+
+@media screen and (max-width: 900px) {
+    .Activity .content .inform {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: .5em;
+    }
+}

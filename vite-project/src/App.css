@@ -1,0 +1,136 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-blue: hsl(246, 80%, 60%);
+  --primary-work-clr: hsl(15, 100%, 70%);
+  --primary-play-clr: hsl(195, 74%, 62%);
+  --primary-study-clr: hsl(348, 100%, 68%);
+  --primary-exercise-clr: hsl(145, 58%, 55%);
+  --primary-social-clr: hsl(264, 64%, 52%);
+  --primary-self-care-clr:hsl(43, 84%, 65%);
+  --neutral-very-dark-blue: hsl(226, 43%, 10%);
+  --neutral-dark-blue: hsl(235, 46%, 20%);
+  --neutral-desaturated-blue: hsl(235, 45%, 61%);
+  --neutral-pale-blue: hsl(236, 100%, 87%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --padding: 1.5rem;
+  --title-fs: 18px;
+  --primary-fw: 500;
+  --secondary-fw: 400;
+  --thirdary-fw: 300;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.App {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: 'Rubik', sans-serif;
+  font-weight: var(--thirdary-fw);
+  font-size: 1rem;
+  display: grid;
+  place-items: center;
+  background-color: var(--neutral-very-dark-blue);
+  color: var(--neutral-pale-blue);
+}
+
+.App .container {
+  width: min(90%,70rem);
+}
+
+.App .grid-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 2em;
+}
+
+.App .grid-layout .row-2 {
+  grid-row: span 2;
+}
+
+.App .user {
+  background-color: var(--neutral-dark-blue);
+  border-radius: 1em;
+}
+
+.App .user > * {
+  padding: var(--padding);
+}
+
+.App .user .profile {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  background-color: var(--primary-blue);
+  border-radius: 1em;
+  min-height: 70%;
+}
+
+.App .user .profile .img {
+  width: 80px;
+  aspect-ratio: 1;
+  border: 3px solid var(--neutral-white);
+  border-radius: 50%;
+}
+
+.App .user .profile .text > .name {
+  font-weight: var(--thirdary-fw);
+  color: var(--neutral-white);
+}
+
+.App .user .controller .lists {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.App .user .controller .lists input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.App .user .controller .lists label:is(:hover,:focus-visible){
+  color: var(--neutral-white);
+  cursor: pointer;
+}
+
+.App .user .controller .lists li:has(input[type="radio"]:checked) label {
+  color: var(--neutral-white);
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    padding-block: 5em;
+  }
+
+  .App .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .App .user .profile {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .App .user .profile .text > .name {
+    font-size: 1.5em;
+  }
+
+  .App .user .controller .lists {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
